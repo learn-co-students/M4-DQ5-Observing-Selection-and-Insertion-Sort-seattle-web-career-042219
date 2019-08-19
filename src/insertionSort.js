@@ -1,4 +1,15 @@
 function insertionSort(arr) {
-  // your code here!
-  // arr is an array of unsorted integers (i.e. [3, 5, 1])
+  for (let startIdx = 0; startIdx < arr.length; startIdx++) {
+    for (
+      let currIdx = startIdx;
+      currIdx > 0 && arr[currIdx - 1] > arr[currIdx];
+      currIdx--
+    ) {
+      let temp = arr[currIdx];
+      arr[currIdx] = arr[currIdx - 1];
+      arr[currIdx - 1] = temp;
+    }
+  }
 }
+
+insertionSort([5, 4, 3, 2, 1]);
